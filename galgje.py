@@ -1,0 +1,46 @@
+import random
+
+woorden = [
+    "zombie",
+    "virus",
+    "beest",
+    "bloed",
+    "angst",
+    "chaos",
+    "vlucht",
+    "schuil",
+    "kelder",
+    "bunker",
+    "radio",
+    "leger",
+    "mesje",
+    "bijl",
+    "hamer",
+    "kogel",
+    "schot",
+    "alarm",
+    "gifgas",
+    "brand",
+    "motor",
+    "truck",
+    "muur",
+    "poort",
+    "hek",
+    "water",
+    "eten",
+    "medic",
+    "serum",
+    "wonde",
+    "steek",
+    "grijp",
+    "dood",
+    "graf",
+    "nacht",
+    "donker",
+    "rook",
+    "gevaar",
+    "redden"
+]
+
+pogingen = 7
+
