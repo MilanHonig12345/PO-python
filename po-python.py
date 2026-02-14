@@ -62,28 +62,30 @@ def rekensommen():
 rekensommen()
 
 def dobbelgevecht():
-    print("-----------------------------------")
-    print("Mini-game: Dobbelgevecht!")
-    input("Druk op Enter om te dobbelen...")
+    
+    while True:
+        print("-----------------------------------")
+        print("Mini-game: Dobbelgevecht!")
+        input("Druk op Enter om te dobbelen...")
 
-    speler = random.randint(1, 6)
-    zombie = random.randint(1, 6)
+        speler = random.randint(1, 6)
+        zombie = random.randint(1, 6)
 
-    print(f"Jij gooit: {speler}")
-    print(f"Zombie gooit: {zombie}")
+        print(f"Jij gooit: {speler}")
+        print(f"Zombie gooit: {zombie}")
 
-    if speler > zombie:
-        print("Je wint!")
-        return True
-    elif speler < zombie:
-        print("Je verliest!")
-        return False
-    else:
-        print("Gelijkspel! De winst gaat naar jou!")
-        return None
+        if speler > zombie:
+            print("Je wint!")
+            print("-----------------------")
+            break
+        elif speler < zombie:
+            print("Je verliest!")
+            print("-----------------------")
+            break
+        else:
+            print("Gelijkspel! Speel opnieuw")
+            print("-----------------------")
 dobbelgevecht()
-
-import random
 
 def steenpapierschaar():
     
