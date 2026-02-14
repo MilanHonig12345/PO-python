@@ -1,5 +1,5 @@
 def startscherm():
-    print("=== BUNKER SURVIVAL ===")
+    print("=== EPIC BUNKER SURVIVAL ===")
     print("1. Uitleg")
     print("2. start")
     print("-----------------------------")
