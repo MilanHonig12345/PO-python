@@ -26,11 +26,12 @@ def startscherm():
         startscherm()
     
 startscherm()
+
 import random 
 def raad_het_getal():
     print("------------------------------")
     print("Mini-game: Raad het getal (1 t/m 5)")
-    geheim = random.randint(1, 5)
+    geheim = random.choice([1,2,3,4,5])
     gok = int(input("Jouw gok: "))
 
     if gok == geheim:
@@ -41,25 +42,48 @@ def raad_het_getal():
         return False
 
 raad_het_getal()
+
+import random
+
 def rekensommen():
     print("-----------------------------------")
     print("Mini-game: Rekensommen")
-    a = random.randint(1, 10)
-    b = random.randint(1, 10)
-    antwoord = int(input(f" {a} + {b} = "))
-    if antwoord !=  a + b:
+
+    a = random.choice([1,2,3,4,5,6,7,8,9,10])
+    
+    b = random.choice([1,2,3,4,5,6,7,8,9,10])
+
+    print(a, "+", b)
+    antwoord = int(input("Antwoord: "))
+
+    if antwoord != a + b:
         print("Fout, het was", a + b)
         return False
+    c = random.choice([1,2,3,4,5,6,7,8,9,10])
+    d = random.choice([1,2,3,4,5,6,7,8,9,10])
+
+    print(c, "*", d)
+    antwoord = int(input("Antwoord: "))
+
+    if antwoord != c * d:
+        print("Fout, het was", c * d)
+        return False
     
-    c = random.randint(1, 10)
-    d = random.randint(1, 10)
-    antwoord2 = int(input(f"{c} * {d} = "))
-    if antwoord2 == c * d:
-        print("Goed gedaan! Je wint!")
+    e = random.choice([1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 14, 15])
+    f = random.choice([1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 14, 15])
+
+    print(e, "*", f)
+    antwoord = int(input("Antwoord: "))
+
+    if antwoord != e * f:
+        print("Fout, het was", e * f)
         return True
     else:
-        print ("Fout, het was", c * d)
+        print("Goed gedaan!")
+    
 rekensommen()
+
+import random
 
 def dobbelgevecht():
     
@@ -68,8 +92,8 @@ def dobbelgevecht():
         print("Mini-game: Dobbelgevecht!")
         input("Druk op Enter om te dobbelen...")
 
-        speler = random.randint(1, 6)
-        zombie = random.randint(1, 6)
+        speler = random.choice([1,2,3,4,5,6])
+        zombie = random.choice([1,2,3,4,5,6])
 
         print(f"Jij gooit: {speler}")
         print(f"Zombie gooit: {zombie}")
@@ -117,9 +141,52 @@ def steenpapierschaar():
     
 steenpapierschaar()
 
-    
-    
+import random
 
+def raadhetwoord():
 
+    woorden = ["zombie","virus","beest","bloed","angst","chaos","vlucht",
+               "schuil","kelder","bunker","radio","leger","mesje","bijl",
+               "hamer","kogel","schot","alarm","gifgas","brand","motor",
+               "truck","muur","poort","hek","water","eten","steek","grijp","dood","graf","nacht","donker",
+               "rook","gevaar","redden"]
+
+    woord = random.choice(woorden)
     
+    geraden = ""
+    pogingen = 8
 
+    print("Raad het woord!")
+
+    while pogingen > 0:
+
+        goed = True
+        print("Woord: ", end="")
+
+        for letter in woord:
+            if letter in geraden:
+                print(letter, end=" ")
+            else:
+                print("_", end=" ")
+                goed = False
+
+        print()
+
+        if goed:
+            print("gewonnen!")
+            return
+
+        gok = input("Raad een letter: ")
+
+        if gok in woord:
+            print("Goed!")
+        else:
+            print("Fout!")
+            pogingen = pogingen - 1
+            print("Nog", pogingen, "pogingen over")
+
+        geraden = geraden + gok
+
+    print("game over. Het woord was:", woord)
+    
+raadhetwoord()
