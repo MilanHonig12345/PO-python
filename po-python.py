@@ -114,7 +114,7 @@ dobbelgevecht()
 def steenpapierschaar():
     
     while True:
-        print("STEEN, PAPIER, SCHAAR")
+        print("MIni-Game: STEEN, PAPIER, SCHAAR")
         print("kies:")
         print("1. steen")
         print("2. papier")
@@ -156,7 +156,7 @@ def raadhetwoord():
     geraden = ""
     pogingen = 8
 
-    print("Raad het woord!")
+    print("MiniRaad het woord!")
 
     while pogingen > 0:
 
@@ -176,7 +176,7 @@ def raadhetwoord():
             print("gewonnen!")
             return
 
-        gok = input("Raad een letter: ")
+        gok = input("Mini-Game: Raad een letter (kies 1 letter per keer): ")
 
         if gok in woord:
             print("Goed!")
