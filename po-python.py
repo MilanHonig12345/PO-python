@@ -82,6 +82,10 @@ def dobbelgevecht():
         return None
 dobbelgevecht()
     
+
+
+
+
     
 
 
