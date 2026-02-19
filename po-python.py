@@ -27,7 +27,8 @@ def startscherm():
     
 startscherm()
 
-import random 
+import random
+import time 
 def raad_het_getal():
     print("------------------------------")
     print("Mini-game: Raad het getal (1 t/m 5)")
@@ -190,3 +191,82 @@ def raadhetwoord():
     print("game over. Het woord was:", woord)
     
 raadhetwoord()
+
+def algemene_quiz():
+    
+    print("-----------------------")
+    print("Mini-game: Algemene Quiz!")
+    
+    vragen = [
+        {
+            "vraag": "Wat is de hoofdstad van Frankrijk?",
+            "opties": ["1. Parijs", "2. Londen", "3. Berlijn"],
+            "antwoord": "1"
+        },
+        {
+            "vraag": "Hoeveel dagen heeft een schrikkeljaar?",
+            "opties": ["1. 365", "2. 366", "3. 364"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "Wie schilderde de Mona Lisa?",
+            "opties": ["1. Michelangelo", "2. Leonardo da Vinci", "3. Picasso"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "Wat is H2O?",
+            "opties": ["1. Zuurstof", "2. Water", "3. Helium"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "Hoeveel continenten zijn er op aarde?",
+            "opties": ["1. 5", "2. 6", "3. 7"],
+            "antwoord": "3"
+        },
+        {
+            "vraag": "Wie schreef 'Romeo en Julia'?",
+            "opties": ["1. William Shakespeare", "2. J.K. Rowling", "3. Charles Dickens"],
+            "antwoord": "1"
+        },
+        {
+            "vraag": "Wat krijg je als je rood en geel mengt?",
+            "opties": ["1. Paars", "2. Oranje", "3. Groen"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "Welke van deze dieren is een zoogdier?",
+            "opties": ["1. Krokodil", "2. Walvis", "3. Haai"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "Wat is 12 x 12?",
+            "opties": ["1. 144", "2. 124", "3. 154"],
+            "antwoord": "1"
+        }
+    ]
+    
+    score = 0
+    gekozen_vragen = random.sample(vragen, 5)  # kies willekeurig 5 vragen
+    
+    for q in gekozen_vragen:
+        print(" " + q["vraag"])
+        for optie in q["opties"]:
+            print(optie)
+        
+        gok = input("Kies 1, 2 of 3: ")
+        
+        if gok == q["antwoord"]:
+            print("Goed!")
+            score += 1
+        else:
+            print("Fout!")
+    
+    print(f"Je hebt {score} van de 5 vragen goed!")
+    
+    if score >= 3:
+        print("Je wint deze minigame!")
+        return True
+    else:
+        print("Je verliest deze minigame!")
+        return False
+algemene_quiz()
