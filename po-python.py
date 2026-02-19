@@ -17,7 +17,7 @@ def startscherm():
         print("De wereld zoals je die kende bestaat niet meer.")
         print("Jij staat oog in oog met een zombie.")
 
-        print("Jij hebt vijf levens en de zombie ook.")
+        print("Jij hebt vier levens en de zombie ook.")
         print("Verliezen kost je levens, maar winnen kost die van de zombie.")
         print("Als de levens van jou of de zombie op zijn, is het spel voorbij.")
         print("Zijn de levens van de zombie eerder op dan heb je gewonnen.")
