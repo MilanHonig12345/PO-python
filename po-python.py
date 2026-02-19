@@ -195,7 +195,7 @@ raadhetwoord()
 def algemene_quiz():
     
     print("-----------------------")
-    print("Mini-game: Algemene Quiz!")
+    print("Mini-game: Quizen!")
     
     vragen = [
         {
@@ -242,11 +242,52 @@ def algemene_quiz():
             "vraag": "Wat is 12 x 12?",
             "opties": ["1. 144", "2. 124", "3. 154"],
             "antwoord": "1"
+        },
+        {
+            "vraag": "Wat is de grootste planeet in ons zonnestelsel?",
+            "opties": ["1. Aarde", "2. Jupiter", "3. Mars"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "In welk land ligt de Eiffeltoren?",
+            "opties": ["1. Italië", "2. Spanje", "3. Frankrijk"],
+            "antwoord": "3"
+        },
+        {
+            "vraag": "Hoeveel minuten zitten er in een uur?",
+            "opties": ["1. 50", "2. 60", "3. 70"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "Welke kleur krijg je als je blauw en geel mengt?",
+            "opties": ["1. Groen", "2. Paars", "3. Oranje"],
+            "antwoord": "1"
+        },
+        {
+            "vraag": "Wat is het snelste landdier?",
+            "opties": ["1. Leeuw", "2. Jachtluipaard", "3. Paard"],
+            "antwoord": "2"
+        },
+        {
+            "vraag": "Hoeveel zijden heeft een driehoek?",
+            "opties": ["1. 3", "2. 4", "3. 5"],
+            "antwoord": "1"
+        },
+        {
+            "vraag": "Wat is de uitkomst van 9 x 8?",
+            "opties": ["1. 72", "2. 81", "3. 64"],
+            "antwoord": "1"
+        },
+        {
+            "vraag": "Welke oceaan ligt tussen Europa en Amerika?",
+            "opties": ["1. Indische Oceaan", "2. Atlantische Oceaan", "3. Stille Oceaan"],
+            "antwoord": "2"
         }
+
     ]
     
     score = 0
-    gekozen_vragen = random.sample(vragen, 5)  # kies willekeurig 5 vragen
+    gekozen_vragen = random.sample(vragen, 5)
     
     for q in gekozen_vragen:
         print(" " + q["vraag"])
@@ -269,4 +310,53 @@ def algemene_quiz():
     else:
         print("Je verliest deze minigame!")
         return False
+    
 algemene_quiz()
+
+import random
+
+def coderaden():
+
+    print("-----------------------")
+    print("Mini-game: Raad De Code!")
+    print("voer een nummer-code in en raad in 10 beurten wat de code is")
+    print("kies uit de nummers 1, 2, 3, 4 en 5")
+    print("de code bestaat uit 4 cijfers")
+    
+    code = ""
+    for i in range(4):
+        code += str(random.choice(["1","2","3","4","5"]))
+
+
+    beurten = 10
+
+    while beurten > 0:
+        gok = input("code (4 cijfers): ")
+
+        if len(gok) != 4:
+            print("vul 4 cijfers in.")
+            continue
+
+        if gok == code:
+            print("Goed gedaan!")
+            return
+
+        goed = 0
+        fout = 0
+
+        for i in range(4):
+            if gok[i] == code[i]:
+                goed += 1
+            elif gok[i] in code:
+                fout += 1
+
+        print("Juist cijfer en juiste plek:", goed)
+        print("Juist cijfer maar verkeerde plek:", fout)
+
+        beurten -= 1
+        print("nog", beurten, "beurten over")
+        print("-----------------------")
+
+    print("Helaas! De code was:", code)
+    
+coderaden()
