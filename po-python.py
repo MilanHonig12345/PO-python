@@ -1,31 +1,32 @@
 def startscherm():
     print("=== EPIC ZOMBIE BATTLE ===")
-    print("1. Uitleg")
+    print("1. Uitleg")   
     print("2. start")
     print("-----------------------------")
 
-    kies = input("Kies 1 of 2: ")
+    kies = input("Kies 1 of 2: ") # Laat de speler kiezen tussen uitleg of starten
 
     if kies == "2":
         print("--------------------------------")
         print("Het spel begint!")
-        print("Probeer zoveel mogelijk te winnen!")
+        print("Probeer zoveel mogelijk te winnen!") # Spel starten
     
     else:
         print("--------------------------------")
         print("Er is een zombie-apocalyps uitgebroken.")
         print("De wereld zoals je die kende bestaat niet meer.")
-        print("Jij staat oog in oog met een zombie.")
+        print("Jij staat oog in oog met een zombie.")  # Uitleg van het spel geven
 
+#        Uitleg van het spel
         print("Jij hebt vier levens en de zombie ook.")
         print("Verliezen kost je levens, maar winnen kost die van de zombie.")
         print("Als de levens van jou of de zombie op zijn, is het spel voorbij.")
         print("Zijn de levens van de zombie eerder op dan heb je gewonnen.")
         print("--------------------------------")
         input("Druk op enter om terug te gaan")
-        startscherm()
+        
     
-startscherm()
+startscherm() # terug naar startscherm
 speler_levens = 4
 zombie_levens = 4
 import random
