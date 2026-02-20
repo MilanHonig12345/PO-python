@@ -206,18 +206,16 @@ def raadhetwoord():
     woorden = ["zombie","virus","beest","bloed","angst","chaos","vlucht",
                "schuil","kelder","bunker","radio","leger","mesje","bijl",
                "hamer","kogel","schot","alarm","gifgas","brand","motor",
-               "truck","muur","poort","hek","water","eten","steek","grijp","dood","graf","nacht","donker",
-               "rook","gevaar","redden"]
+               "truck","muur","poort","hek","water","eten","steek","grijp",
+               "dood","graf","nacht","donker","rook","gevaar","redden"]
 
     woord = random.choice(woorden)
-    
     geraden = ""
     pogingen = 8
 
-    print("MiniRaad het woord!")
+    print("Mini-game: Raad het woord!")
 
     while pogingen > 0:
-
         goed = True
         print("Woord: ", end="")
 
@@ -227,52 +225,50 @@ def raadhetwoord():
             else:
                 print("_", end=" ")
                 goed = False
-
         print()
 
         if goed:
-            print("gewonnen!")
+            print(" Gewonnen! De zombie verliest een leven.")
             zombie_levens -= 1
-            break 
+            break
 
-        gok = input("Mini-Game: Raad een letter (kies 1 letter per keer): ")
+        gok = input("Raad een letter (1 letter per keer): ").lower()
+
+        
+        if len(gok) != 1:
+            print("Voer **exact één letter** in!") # zo kan je niet meerdere letter in een keer gokken.
+            continue  # gaat terug naar start van while
+        elif gok in geraden:
+            print("Je hebt deze letter al geprobeerd.")
+            continue  
+
+        # Voeg de letter toe aan geraden
+        geraden += gok
 
         if gok in woord:
-            print("Goed!")
-            
-            
+            print("Goed geraden!")
         else:
             print("Fout!")
-            pogingen = pogingen - 1
+            pogingen -= 1
             print("Nog", pogingen, "pogingen over")
-            
-        
-        if pogingen == 0:
-            speler_levens -= 1
-            geraden = geraden + gok
-            print("game over. Het woord was:", woord)
-            break 
+            if pogingen == 0:
+                speler_levens -= 1
+                print("Game over! Het woord was:", woord)
+                break
 
-        
+    # Toon levens na minigame
     print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
 
-    
+    # Check of spel stopt
     if speler_levens <= 0:
         print("Game over, je hebt verloren.")
         return True
     elif zombie_levens <= 0:
-        print("gefeliciteerd! Je hebt gewonnen.")
+        print("Gefeliciteerd! Je hebt gewonnen.")
         return True
     else:
         return False
-
-   
-    
-     
-
-    
 raadhetwoord()
-
 def algemene_quiz():
     global speler_levens, zombie_levens
     
@@ -329,46 +325,12 @@ def algemene_quiz():
             "vraag": "Wat is de grootste planeet in ons zonnestelsel?",
             "opties": ["1. Aarde", "2. Jupiter", "3. Mars"],
             "antwoord": "2"
-        },
-        {
-            "vraag": "In welk land ligt de Eiffeltoren?",
-            "opties": ["1. Italië", "2. Spanje", "3. Frankrijk"],
-            "antwoord": "3"
-        },
-        {
-            "vraag": "Hoeveel minuten zitten er in een uur?",
-            "opties": ["1. 50", "2. 60", "3. 70"],
-            "antwoord": "2"
-        },
-        {
-            "vraag": "Welke kleur krijg je als je blauw en geel mengt?",
-            "opties": ["1. Groen", "2. Paars", "3. Oranje"],
-            "antwoord": "1"
-        },
-        {
-            "vraag": "Wat is het snelste landdier?",
-            "opties": ["1. Leeuw", "2. Jachtluipaard", "3. Paard"],
-            "antwoord": "2"
-        },
-        {
-            "vraag": "Hoeveel zijden heeft een driehoek?",
-            "opties": ["1. 3", "2. 4", "3. 5"],
-            "antwoord": "1"
-        },
-        {
-            "vraag": "Wat is de uitkomst van 9 x 8?",
-            "opties": ["1. 72", "2. 81", "3. 64"],
-            "antwoord": "1"
-        },
-        {
-            "vraag": "Welke oceaan ligt tussen Europa en Amerika?",
-            "opties": ["1. Indische Oceaan", "2. Atlantische Oceaan", "3. Stille Oceaan"],
-            "antwoord": "2"
         }
-
     ]
     
     score = 0
+    
+    # Kies 5 random vragen
     gekozen_vragen = random.sample(vragen, 5)
     
     for q in gekozen_vragen:
@@ -383,32 +345,32 @@ def algemene_quiz():
             score += 1
         else:
             print("Fout!")
+        print("-----------------------")
     
-    print(f"Je hebt {score} van de 5 vragen goed!")
-    
+    # Minigame resultaat
     if score >= 3:
-        print("Je wint deze minigame!")
+        print(f"Je hebt {score} van de 5 vragen goed! Je wint deze minigame!")
         zombie_levens -= 1
-        
     else:
-        print("Je verliest deze minigame!")
+        print(f"Je hebt {score} van de 5 vragen goed. Je verliest deze minigame!")
         speler_levens -= 1
-        
+    
+    # Levens tonen na minigame
     print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
     print("-----------------------------")
-         
-    if speler_levens <= 0:
-            print("Game over! De zombie wint.")
-            return True  # teruggeven dat het spel moet stoppen
-    elif zombie_levens <= 0:
-            print("Gefeliciteerd! Jij wint!")
-            return True  # teruggeven dat het spel moet stoppen
-    else:
-            return False  # spel gaat door
-            
     
-algemene_quiz()
+    # Check of het spel stopt
+    if speler_levens <= 0:
+        print("Game over! De zombie wint.")
+        return True
+    elif zombie_levens <= 0:
+        print("Gefeliciteerd! Jij wint!")
+        return True
+    else:
+        return False
 
+# Test aanroepen
+algemene_quiz()
 import random
 
 def coderaden():
