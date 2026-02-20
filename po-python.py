@@ -1,4 +1,4 @@
-def startscherm():
+def startscherm(): # hier geven we een stukje code een naam die we later aanroepen zodat het uitgevoerd kanworden
     print("=== EPIC ZOMBIE BATTLE ===")
     print("1. Uitleg")   
     print("2. start")
@@ -6,12 +6,12 @@ def startscherm():
 
     kies = input("Kies 1 of 2: ") # Laat de speler kiezen tussen uitleg of starten
 
-    if kies == "2":
+    if kies == "2": # als de speeler 2 kiest, print het wat zinnen het gaat het door naar de volgende def
         print("--------------------------------")
         print("Het spel begint!")
         print("Probeer zoveel mogelijk te winnen!") # Spel starten
     
-    else:
+    else: # als het iets anders dan 2 is voert het deze regel uit
         print("--------------------------------")
         print("Er is een zombie-apocalyps uitgebroken.")
         print("De wereld zoals je die kende bestaat niet meer.")
@@ -23,16 +23,29 @@ def startscherm():
         print("Als de levens van jou of de zombie op zijn, is het spel voorbij.")
         print("Zijn de levens van de zombie eerder op dan heb je gewonnen.")
         print("--------------------------------")
+<<<<<<< HEAD
+        input("Druk op enter om terug te gaan") 
+        startscherm() # als je op enter drukt voert het code uit die we eerder hebben geschreven
+    
+startscherm() #hier wordt dus dat stukje code aangeroepen
+=======
         input("Druk op enter om terug te gaan")
         
     
 startscherm() # terug naar startscherm
+<<<<<<< HEAD
 speler_levens = 4 # De speler begint met 4 levens.
 zombie_levens = 4 # De zombie begint met 4 levens.
 # Import modules die nodig zijn
 import random
 import time
 import sys
+=======
+>>>>>>> bcc0166b11a510dc992116a78b4457dbf7d61d0d
+speler_levens = 4
+zombie_levens = 4
+import random #zorgt dat het willekeurige keuzes kan maken in het volgende stukje code wanneer er random.choice wordt gebruikt
+>>>>>>> f33f1b7445b1fea599bb14e5fad48418bbc3247b
 def raad_het_getal():
     def check_levens():
         global speler_levens, zombie_levens # gebruik de globale levens
