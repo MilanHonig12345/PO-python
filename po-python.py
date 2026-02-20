@@ -27,29 +27,30 @@ def startscherm():
         
     
 startscherm() # terug naar startscherm
-speler_levens = 4
-zombie_levens = 4
+speler_levens = 4 # De speler begint met 4 levens.
+zombie_levens = 4 # De zombie begint met 4 levens.
+# Import modules die nodig zijn
 import random
 import time
 import sys
 def raad_het_getal():
     def check_levens():
-        global speler_levens, zombie_levens
+        global speler_levens, zombie_levens # gebruik de globale levens
         if speler_levens <= 0:
             sys.exit()
         elif zombie_levens <= 0:
             sys.exit()
         check_levens()
-    global speler_levens, zombie_levens  # <-- hier vertel ik dat we de globale variabelen gebruiken
+    global speler_levens, zombie_levens  
     print("------------------------------")
     print("Mini-game: Raad het getal (1 t/m 5)")
-    geheim = random.choice([1,2,3,4,5])
-    gok = int(input("Jouw gok: "))
-    if gok == geheim:
+    geheim = random.choice([1,2,3,4,5]) # kies een willekeurig geheim getal
+    gok = int(input("Jouw gok: ")) # speler gokt
+    if gok == geheim: # juist geraden
         print("Goed geraden! Je wint.")
-        zombie_levens -= 1
+        zombie_levens -= 1 # zombie verliest leven
         
-    else:
+    else: # fout geraden
         print("Fout, het was", geheim)
         speler_levens -= 1
        
