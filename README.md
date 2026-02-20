@@ -13,3 +13,5 @@ Het programmeren van de minigames ging goed. Alles werkt zoals het moet en de le
 We hebben gekozen voor een zombie-thema. Ook hebben we gekozen dat het spel stopt als iemand geen levens meer heeft en dat de minigames in een vaste volgorde komen. We kozen zombies omdat het spannend is en veel mensen het leuk vinden. Het geeft een duidelijk doel: overleven en winnen van de zombie. Een belangrijke keuze is dat de speler en de zombie allebei vier levens hebben. Dit maakt het spel eerlijk en spannend. Zo kan je meerdere minigames spelen zonder dat het te snel voorbij is.<br>
 Voor mijn gevoel heb ik goed aan dit project gezeten. Ook waren we al snel gelijk aan de slag gegaan, omdat we maar twee weken de tijd hadden.
 Ik ben eigenlijk gewoon trots om het hele spel. In de lessen vond ik het hoofdstuk python erg moeilijk en had ik moeite met het onthouden van alle functies. Ik ben dus heel trots dat het toch is gelukt om een mooi spel neer te zetten. Echter, hadden we wel meer moeten vragen in de lessen en dat ga ik zeker onthouden voor de volgende keer.
+
+<b><u> Reflectie Milan </u></b> <br>
