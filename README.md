@@ -15,3 +15,57 @@ Voor mijn gevoel heb ik goed aan dit project gezeten. Ook waren we al snel gelij
 Ik ben eigenlijk gewoon trots om het hele spel. In de lessen vond ik het hoofdstuk python erg moeilijk en had ik moeite met het onthouden van alle functies. Ik ben dus heel trots dat het toch is gelukt om een mooi spel neer te zetten. Echter, hadden we wel meer moeten vragen in de lessen en dat ga ik zeker onthouden voor de volgende keer.
 
 <b><u> Reflectie Milan </u></b> <br>
+Tijdens het maken van ons spel heb ik veel geleerd. In het begin vond ik programmeren met Python best moeilijk. Ik had moeite met het logische volgordes te doen. Door dit project heb ik geleerd dat je een spel stap voor stap moet opbouwen. Eerst één onderdeel maken dat goed werkt, en daarna pas verder gaan. Dat maakte het overzichtelijker en minder stressvol.
+
+Een techniek die ik goed heb leren gebruiken is het werken met if, else en elif dingen ik snap deze ook super goed. Ik heb zelf een paar minigames gemaakt en daar aparte functies voor geschreven. Daardoor bleef de code duidelijk en kon ik fouten sneller vinden. Ook heb ik beter geleerd hoe je variabelen gebruikt om de levens van de speler en de zombie bij te houden. Zo bleef het spel logisch.
+
+Wat ik lastig vond, was ervoor zorgen dat alles op elkaar aansloot. dus dat als de zombie geen levens meer had bijvoorbeeld dat het hele spel moest stoppen. Ook het samenvoegen van alle minigames vond ik moeilijk, maar door goed te testen is het gelukt.
+
+De samenwerking met Mayla ging goed. We hebben de taken eerlijk verdeeld en ieder eigen minigames gemaakt. We hielpen elkaar als iets niet lukte. Wat beter had gekund, is dat we meer vragen aan de docent hadden gesteld.
+
+We kozen voor een zombie-thema omdat dat spannend is. Een belangrijke keuze was dat beide vier levens hebben, zodat het spel eerlijk blijft. Ik ben trots dat het ons is gelukt om een werkend spel te maken. De volgende keer zou ik eerder om hulp vragen.
+
+<b><u> bronnen</u></b> <br>
+1. W3Schools – Python Functions
+
+W3Schools. (z.d.). Python Functions. Geraadpleegd op 20 februari 2026, van
+https://www.w3schools.com/python/python_functions.asp
+
+Gebruikt voor uitleg over def, functies aanroepen en de opbouw van het spel.
+
+2. W3Schools – Python Random Module
+
+W3Schools. (z.d.). Python Random Module. Geraadpleegd op 20 februari 2026, van
+https://www.w3schools.com/python/module_random.asp
+
+Gebruikt voor random.choice() en random.sample() in de mini-games.
+
+3. W3Schools – Python While Loops
+
+W3Schools. (z.d.). Python While Loops. Geraadpleegd op 20 februari 2026, van
+https://www.w3schools.com/python/python_while_loops.asp
+
+Gebruikt voor herhalingen in mini-games zoals dobbelgevecht, woord raden en code kraken.
+
+4. W3Schools – Python Strings
+
+W3Schools. (z.d.). Python Strings. Geraadpleegd op 20 februari 2026, van
+https://www.w3schools.com/python/python_strings.asp
+
+Gebruikt bij het woordspel en het controleren van ingevoerde codes.
+
+5. Informatica Baas – Python Basis
+
+Informatica Baas. (z.d.). Python uitleg en programmeerbasis.
+
+Gebruikt voor algemene uitleg over variabelen, condities en programmastructuur.
+
+6. ChatGPT – Uitleg over sys.exit()
+
+OpenAI. (2026). Uitleg over het gebruik van sys.exit() in Python. Verkregen via ChatGPT.
+
+Gebruikte prompt:
+
+“Hoe kan ik mijn Python-spel direct laten stoppen wanneer de speler of de zombie geen levens meer heeft?  En: Kun je uitleggen hoe sys.exit() werkt en hoe ik dat moet gebruiken in mijn code?”
+
+Gebruikt om te begrijpen hoe import sys en sys.exit() het spel beëindigen bij game over.
