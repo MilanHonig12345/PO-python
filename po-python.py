@@ -27,44 +27,41 @@ def startscherm(): # hier geven we een stukje code een naam die we later aanroep
         startscherm() # als je op enter drukt voert het code uit die we eerder hebben geschreven
     
 startscherm() #hier wordt dus dat stukje code aangeroepen
-=======
-        input("Druk op enter om terug te gaan")
-        
-    
-startscherm() # terug naar startscherm
-speler_levens = 4
+
+speler_levens = 4 #levens van zombie en speleer die er later vanaf worden gehaalf als de speler wint/verliest
 zombie_levens = 4
+import sys #zorgt dat we in de code een ss.exit kunnen toevoegen en dat dat ook daadwerkelijk werkt
 import random #zorgt dat het willekeurige keuzes kan maken in het volgende stukje code wanneer er random.choice wordt gebruikt
 def raad_het_getal():
     def check_levens():
-        global speler_levens, zombie_levens
+        global speler_levens, zombie_levens # gebruik de globale levens
         if speler_levens <= 0:
-            sys.exit()
+            sys.exit() # als de levens van de speler kleiner of gelijk is aan nul, dan stopt het spel en laat het de zien welke speler heeft gewoonen.
         elif zombie_levens <= 0:
             sys.exit()
         check_levens()
-    global speler_levens, zombie_levens  # <-- hier vertel ik dat we de globale variabelen gebruiken
+    global speler_levens, zombie_levens  
     print("------------------------------")
     print("Mini-game: Raad het getal (1 t/m 5)")
-    geheim = random.choice([1,2,3,4,5])
-    gok = int(input("Jouw gok: "))
-    if gok == geheim:
+    geheim = random.choice([1,2,3,4,5]) # kies een willekeurig geheim getal
+    gok = int(input("Jouw gok: ")) # speler gokt
+    if gok == geheim: # juist geraden
         print("Goed geraden! Je wint.")
-        zombie_levens -= 1
+        zombie_levens -= 1 # zombie verliest leven
         
-    else:
-        print("Fout, het was", geheim)
-        speler_levens -= 1
+    else: # fout geraden
+        print("Fout, het was", geheim) #dus tekst die de speler te zien krijgt van het juiste antwoord 
+        speler_levens -= 1 #speler verliest leven
        
     
-    print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
-    if speler_levens <= 0:
-         print("Game over! De zombie wint.")
+    print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens) #scherm met hoeveelheid levens nadat het spel is afgelopen
+    if speler_levens <= 0: 
+         print("Game over! De zombie wint.") #wanneer speler geen levens meer heeft wordt laten zien dat game over is en dat zombie wint
     elif zombie_levens <= 0:
-         print("Gefeliciteerd! Jij wint!")
+         print("Gefeliciteerd! Jij wint!") #wanneer zombie geen levens meer heeft wordt laten zien dat game over is en dat speler wint
     
     
-raad_het_getal()
+raad_het_getal() #het spel wordt aangeroepen
     
 
 import random
@@ -85,14 +82,14 @@ def rekensommen():
     a = random.choice([1,2,3,4,5,6,7,8,9,10])
     b = random.choice([1,2,3,4,5,6,7,8,9,10])
 
-    print(a, "+", b)
+    print(a, "+", b) #bouwt een willekeurige rekensom 
     antwoord = int(input("Antwoord: "))
 
     if antwoord != a + b:
-        print("Fout, het was", a + b)
-        speler_levens -= 1
+        print("Fout, het was", a + b) #komt het antwoord niet overeen met a + b dan foutmelding
+        speler_levens -= 1 #en gaat er een leven van despeler vanaf
         print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
-        return False  # ← STOP meteen
+        return False #maakt een einde van dit spel 
 
     # SOM 2
     c = random.choice([1,2,3,4,5,6,7,8,9,10])
@@ -146,8 +143,8 @@ def dobbelgevecht():
         speler = random.choice([1,2,3,4,5,6])
         zombie = random.choice([1,2,3,4,5,6])
 
-        print(f"Jij gooit: {speler}")
-        print(f"Zombie gooit: {zombie}")
+        print("Jij gooit:", speler)
+        print("Zombie gooit:", zombie)
 
         if speler > zombie:
             print("Je wint!")
@@ -201,7 +198,7 @@ def steenpapierschaar():
         if kies2_speler == kies2_computer:
             print("Gelijkspel!")
             print("-----------------------")
-        elif (kies2_speler == "1" and kies2_computer == "3") or \
+        elif (kies2_speler == "1" and kies2_computer == "3") or \ #meerdere combinaties om te winnen/verliezen dus and en or gebruiken
              (kies2_speler == "2" and kies2_computer == "1") or \
              (kies2_speler == "3" and kies2_computer == "2"):
             print("Je wint!")
@@ -213,19 +210,18 @@ def steenpapierschaar():
             print("------------------------")
 
             speler_levens -= 1
-        # Check opnieuw of het spel moet stoppen
         print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
         print("-----------------------------")
 
          
         if speler_levens <= 0:
             print("Game over! De zombie wint.")
-            return True  # teruggeven dat het spel moet stoppen
+            return True 
         elif zombie_levens <= 0:
             print("Gefeliciteerd! Jij wint!")
-            return True  # teruggeven dat het spel moet stoppen
+            return True 
         else:
-            return False  # spel gaat door
+            return False 
             
     
 steenpapierschaar()
@@ -242,7 +238,7 @@ def raadhetwoord():
     check_levens()
     global speler_levens, zombie_levens
 
-    woorden = ["zombie","virus","beest","bloed","angst","chaos","vlucht",
+    woorden = ["zombie","virus","beest","bloed","angst","chaos","vlucht", #lijst met woorden voor de spel
                "schuil","kelder","bunker","radio","leger","mesje","bijl",
                "hamer","kogel","schot","alarm","gifgas","brand","motor",
                "truck","muur","poort","hek","water","eten","steek","grijp",
@@ -281,8 +277,7 @@ def raadhetwoord():
             print("Je hebt deze letter al geprobeerd.")
             continue  
 
-        # Voeg de letter toe aan geraden
-        geraden += gok
+        geraden += gok #voegt letter toe aan de letters die je al hebt geraden zodat je die nog een keer kunt doen
 
         if gok in woord:
             print("Goed geraden!")
@@ -295,10 +290,8 @@ def raadhetwoord():
                 print("Game over! Het woord was:", woord)
                 break
 
-    # Toon levens na minigame
     print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
 
-    # Check of spel stopt
     if speler_levens <= 0:
         print("Game over, je hebt verloren.")
         return True
@@ -377,8 +370,7 @@ def algemene_quiz():
     
     score = 0
     
-    # Kies 5 random vragen
-    gekozen_vragen = random.sample(vragen, 5)
+    gekozen_vragen = random.sample(vragen, 5) #random sample zorgt dat het een willekeurige vraag kiest zonder dat het meerdere keren voorbij komt.
     
     for q in gekozen_vragen:
         print(" " + q["vraag"])
@@ -394,7 +386,7 @@ def algemene_quiz():
             print("Fout!")
         print("-----------------------")
     
-    # Minigame resultaat
+    # de resultaten van spelletje
     if score >= 3:
         print(f"Je hebt {score} van de 5 vragen goed! Je wint deze minigame!")
         zombie_levens -= 1
@@ -402,11 +394,9 @@ def algemene_quiz():
         print(f"Je hebt {score} van de 5 vragen goed. Je verliest deze minigame!")
         speler_levens -= 1
     
-    # Levens tonen na minigame
     print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
     print("-----------------------------")
     
-    # Check of het spel stopt
     if speler_levens <= 0:
         print("Game over! De zombie wint.")
         return True
@@ -416,7 +406,6 @@ def algemene_quiz():
     else:
         return False
 
-# Test aanroepen
 algemene_quiz()
 import random
 
@@ -475,14 +464,12 @@ def coderaden():
 
     if not gewonnen:
         print("Helaas! De code was:", code)
-        speler_levens -= 1  # speler verliest een leven bij verlies
+        speler_levens -= 1 
         print("Je verliest 1 leven!")
 
-    # Levens tonen na minigame
     print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
     print("-----------------------------")
 
-    # Check of het spel stopt
     if speler_levens <= 0:
         print("Game over! De zombie wint.")
         return True
@@ -513,7 +500,7 @@ def geheugentest():
     while rondes > 0:
         print("\nNieuwe ronde!")
 
-        # maak code van 4 cijfers
+        # maakt een code van 4 cijfers
         code = ""
         for i in range(4):
             code += random.choice(["1", "2", "3", "4", "6"])
@@ -541,19 +528,16 @@ def geheugentest():
 
     print("\nJe had", gehaald, "van de 3 goed.")
 
-    # Levens aanpassen afhankelijk van resultaat
     if gehaald >= 2:
         print("Je wint de minigame!")
-        zombie_levens -= 1  # zombie verliest een leven
+        zombie_levens -= 1  
     else:
         print("Je verliest de minigame!")
-        speler_levens -= 1  # speler verliest een leven
+        speler_levens -= 1 
 
-    # Levens tonen
     print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
     print("-----------------------------")
 
-    # Check of het spel stopt
     if speler_levens <= 0:
         print("Game over! De zombie wint.")
         return True
