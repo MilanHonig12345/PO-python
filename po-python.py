@@ -181,19 +181,19 @@ def steenpapierschaar():
             print("------------------------")
 
             speler_levens -= 1
-        # Check opnieuw of het spel moet stoppen
+            
         print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
         print("-----------------------------")
 
          
         if speler_levens <= 0:
             print("Game over! De zombie wint.")
-            return True  # teruggeven dat het spel moet stoppen
+            return True  
         elif zombie_levens <= 0:
             print("Gefeliciteerd! Jij wint!")
-            return True  # teruggeven dat het spel moet stoppen
+            return True 
         else:
-            return False  # spel gaat door
+            return False  
             
     
 steenpapierschaar()
@@ -266,11 +266,6 @@ def raadhetwoord():
     else:
         return False
 
-   
-    
-     
-
-    
 raadhetwoord()
 
 def algemene_quiz():
@@ -399,12 +394,12 @@ def algemene_quiz():
          
     if speler_levens <= 0:
             print("Game over! De zombie wint.")
-            return True  # teruggeven dat het spel moet stoppen
+            return True  
     elif zombie_levens <= 0:
             print("Gefeliciteerd! Jij wint!")
-            return True  # teruggeven dat het spel moet stoppen
+            return True  
     else:
-            return False  # spel gaat door
+            return False  
             
     
 algemene_quiz()
@@ -469,7 +464,6 @@ def geheugentest():
     while rondes > 0:
         print("\nNieuwe ronde!")
 
-        # maak code van 3 cijfers
         code = ""
         for i in range(3):
             code += random.choice(["1", "2", "3", "4", "6"])
@@ -500,8 +494,6 @@ def geheugentest():
         return False
     
 geheugentest()
-
-# ===== HOOFDGAME LOOP =====
 
 def hoofdspel():
     speler_levens = 4
