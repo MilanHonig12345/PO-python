@@ -1,31 +1,39 @@
 def startscherm(): # hier geven we een stukje code een naam die we later aanroepen zodat het uitgevoerd kanworden
     print("=== EPIC ZOMBIE BATTLE ===")
-    print("1. Uitleg")
+    print("1. Uitleg")   
     print("2. start")
     print("-----------------------------")
 
-    kies = input("Kies 1 of 2: ")
+    kies = input("Kies 1 of 2: ") # Laat de speler kiezen tussen uitleg of starten
 
     if kies == "2": # als de speeler 2 kiest, print het wat zinnen het gaat het door naar de volgende def
         print("--------------------------------")
         print("Het spel begint!")
-        print("Probeer zoveel mogelijk te winnen!")
+        print("Probeer zoveel mogelijk te winnen!") # Spel starten
     
     else: # als het iets anders dan 2 is voert het deze regel uit
         print("--------------------------------")
         print("Er is een zombie-apocalyps uitgebroken.")
         print("De wereld zoals je die kende bestaat niet meer.")
-        print("Jij staat oog in oog met een zombie.")
+        print("Jij staat oog in oog met een zombie.")  # Uitleg van het spel geven
 
+#        Uitleg van het spel
         print("Jij hebt vier levens en de zombie ook.")
         print("Verliezen kost je levens, maar winnen kost die van de zombie.")
         print("Als de levens van jou of de zombie op zijn, is het spel voorbij.")
         print("Zijn de levens van de zombie eerder op dan heb je gewonnen.")
         print("--------------------------------")
+<<<<<<< HEAD
         input("Druk op enter om terug te gaan") 
         startscherm() # als je op enter drukt voert het code uit die we eerder hebben geschreven
     
 startscherm() #hier wordt dus dat stukje code aangeroepen
+=======
+        input("Druk op enter om terug te gaan")
+        
+    
+startscherm() # terug naar startscherm
+>>>>>>> bcc0166b11a510dc992116a78b4457dbf7d61d0d
 speler_levens = 4
 zombie_levens = 4
 import random #zorgt dat het willekeurige keuzes kan maken in het volgende stukje code wanneer er random.choice wordt gebruikt
