@@ -62,8 +62,8 @@ def rekensommen():
     print("-----------------------------------")
     print("Mini-game: Rekensommen")
 
+    # SOM 1
     a = random.choice([1,2,3,4,5,6,7,8,9,10])
-    
     b = random.choice([1,2,3,4,5,6,7,8,9,10])
 
     print(a, "+", b)
@@ -72,6 +72,10 @@ def rekensommen():
     if antwoord != a + b:
         print("Fout, het was", a + b)
         speler_levens -= 1
+        print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
+        return False  # ← STOP meteen
+
+    # SOM 2
     c = random.choice([1,2,3,4,5,6,7,8,9,10])
     d = random.choice([1,2,3,4,5,6,7,8,9,10])
 
@@ -81,9 +85,12 @@ def rekensommen():
     if antwoord != c * d:
         print("Fout, het was", c * d)
         speler_levens -= 1
-    
-    e = random.choice([1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 14, 15])
-    f = random.choice([1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 14, 15])
+        print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
+        return False
+
+    # SOM 3
+    e = random.choice([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+    f = random.choice([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
 
     print(e, "*", f)
     antwoord = int(input("Antwoord: "))
@@ -91,16 +98,13 @@ def rekensommen():
     if antwoord != e * f:
         print("Fout, het was", e * f)
         speler_levens -= 1
-    else:
-        print("Goed gedaan!")
-        zombie_levens -= 1
-        
+        print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
+        return False
+
+    print("Goed gedaan!")
+    zombie_levens -= 1
     print("Levens: Speler =", speler_levens, ", Zombie =", zombie_levens)
-    if speler_levens <= 0:
-         print("Game over! De zombie wint.")
-    elif zombie_levens <= 0:
-         print("Gefeliciteerd! Jij wint!")
-    
+    return True
 rekensommen()
 
 import random
