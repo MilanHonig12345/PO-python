@@ -23,7 +23,6 @@ def startscherm(): # hier geven we een stukje code een naam die we later aanroep
         print("Als de levens van jou of de zombie op zijn, is het spel voorbij.")
         print("Zijn de levens van de zombie eerder op dan heb je gewonnen.")
         print("--------------------------------")
-<<<<<<< HEAD
         input("Druk op enter om terug te gaan") 
         startscherm() # als je op enter drukt voert het code uit die we eerder hebben geschreven
     
@@ -33,7 +32,6 @@ startscherm() #hier wordt dus dat stukje code aangeroepen
         
     
 startscherm() # terug naar startscherm
->>>>>>> bcc0166b11a510dc992116a78b4457dbf7d61d0d
 speler_levens = 4
 zombie_levens = 4
 import random #zorgt dat het willekeurige keuzes kan maken in het volgende stukje code wanneer er random.choice wordt gebruikt
