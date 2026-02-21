@@ -32,6 +32,7 @@ speler_levens = 4 #levens van zombie en speleer die er later vanaf worden gehaal
 zombie_levens = 4
 import sys #zorgt dat we in de code een ss.exit kunnen toevoegen en dat dat ook daadwerkelijk werkt
 import random #zorgt dat het willekeurige keuzes kan maken in het volgende stukje code wanneer er random.choice wordt gebruikt
+import time
 def raad_het_getal():
     def check_levens():
         global speler_levens, zombie_levens # gebruik de globale levens
@@ -198,7 +199,7 @@ def steenpapierschaar():
         if kies2_speler == kies2_computer:
             print("Gelijkspel!")
             print("-----------------------")
-        elif (kies2_speler == "1" and kies2_computer == "3") or \ #meerdere combinaties om te winnen/verliezen dus and en or gebruiken
+        elif (kies2_speler == "1" and kies2_computer == "3") or \
              (kies2_speler == "2" and kies2_computer == "1") or \
              (kies2_speler == "3" and kies2_computer == "2"):
             print("Je wint!")
